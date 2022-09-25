@@ -4,6 +4,7 @@
     --color-theme:#20D3C2;
     --color-theme-light:#EDFCFA;
     --color-theme-dark:#0E153D;
+    --color-theme-dark-light:#50546E;
     --color-dark:#080C24;
     --color-white:#FFFFFF;
     --color-gray-0:#AAAAAA;
@@ -59,8 +60,13 @@ html, body {
 .btn-theme:hover{
     background-color: var(--color-theme-dark);
     color:var(--color-white);
-
- }
+  }
+  .bg-theme{
+    background-color: var(--color-theme);
+  }
+  .text-theme{
+    color: var(--color-theme);
+  }
 
  .btn-white{
     background-color: var(--color-white);
@@ -75,7 +81,14 @@ html, body {
     background-color: var(--color-theme-dark);
     color:var(--color-white);
 }
- 
+.instock{
+    color: var(--color-product-instock);
+
+}
+ .outofstock{
+    color:var(--color-product-outofstock);
+    
+}
 .section-title{
     padding: 3rem 0;
     color: var(--color-theme-dark);
@@ -229,6 +242,20 @@ html, body {
      .main-menu .menu-links .menu-link i  {
         font-size: var(--font-size-16);
     }
+     
+    .main-menu .menu-links #cart {
+        position: relative;
+    } 
+
+    .main-menu .menu-links #cart .badge{
+        background-color: var(--color-theme);
+        position: absolute;
+        top: -1.2em;
+        left: 0.7rem;
+    }
+    .main-menu .menu-links #cart:hover .badge{
+        background-color: var(--color-theme-dark);
+    }
 
     .main-menu nav {
         border-top: 1px solid var(--color-gray-2);
@@ -255,6 +282,7 @@ html, body {
         justify-content: space-between;
         align-items:center;
         padding: 0.7rem 1rem;
+        transition: 0.15 ease-in-out;
        }
        .main-menu nav .browse-categories button:hover{ 
         background-color: var(--color-theme-dark);
@@ -314,6 +342,7 @@ align-items: center;
 margin: 0 1rem;
 flex:1;
 border-radius: var(--border-radius-small);
+transition: all 0.3s ease-in-out;
 }
 
 .webshop-info .info-box:hover{
@@ -324,6 +353,8 @@ border-radius: var(--border-radius-small);
 
 .webshop-info .info-box img{
     margin: 1.5rem;
+    transition: all 0.3s ease-in-out;
+    filter: brightness(100%);
 }
 .webshop-info .info-box:hover  img{
    filter: brightness(1000%);
@@ -334,6 +365,7 @@ border-radius: var(--border-radius-small);
     color: var(--color-theme);
     font-size: 1rem;
     font-weight: var(--font-weight-medium);
+    transition: all 0.3s ease-in-out;
 }
 .webshop-info .info-box:hover h1 {
     color: var(--color-white);
@@ -349,6 +381,7 @@ border-radius: var(--border-radius-small);
 }
 
 .shop-by-category .category-box {
+    position: relative;
     background-color: var(--color-gray-1);
     border-radius: var(--border-radius-small);
     height: 100%;
@@ -356,13 +389,30 @@ border-radius: var(--border-radius-small);
     overflow: hidden;
 }
 .shop-by-category .category-box .category-box-title {
+    position: absolute;
+    left: 0;
+    bottom: 0;
     width: 50%;
     border-radius: 0 var(--border-radius-small) 0 0;
     background-color: var(--color-theme-dark);
     color: var(--color-theme);
     padding: 0.5rem 1rem;
     font-weight: var(--font-weight-meduim);
+    height:38px;
+    transition:0.2s ease-in-out ;
 }
+.shop-by-category .category-box:hover .category-box-title {
+    height: 75px;
+}
+
+.shop-by-category .category-box .category-box-title span {
+    display: block;
+    color: var(--color-white);
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+ 
+
 
 #category-box-1{
     grid-column: 1 / 2;
@@ -393,3 +443,120 @@ border-radius: var(--border-radius-small);
     grid-column: 5 / -1;
     grid-row: 3 / -1;
 }
+
+.new-arrivals{
+  padding-top: 2rem;  
+}
+
+.new-arrivals .card{
+    position: relative;
+    height: 400px;
+    width: 403px;
+    overflow: hidden;
+  
+}
+
+.new-arrivals .card img{
+    height:400px
+}
+
+
+
+.new-arrivals .card .card-body{
+    position: absolute;
+    bottom: 0;
+    height: 14%;
+    width: 100%;
+    color: var(--color-white);
+    z-index: 1;
+    transition: 0.3s ease-in-out;
+    font-size: 1rem;
+  }
+  .new-arrivals .card:hover .card-body{
+    height: 40%;
+  }
+
+.new-arrivals .card .card-body h1 {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    transition: 0.3s ease-in-out;
+    font-weight: var(--font-weight-regular);
+}
+.new-arrivals .card:hover .card-body h1 {
+   margin-bottom: 0rem;
+   
+}
+
+.new-arrivals .card .card-body button{
+    background-color: transparent;
+    color: var(--color-white);
+    border: 1px solid var(--color-white);
+    font-size: 0.875rem;
+    padding-left: 0.9rem;
+    padding-right:0.9rem;
+    margin:0.5rem 0;
+}
+.new-arrivals .card .card-body .card-old-price{
+   text-decoration: line-through;
+   margin: 0;
+
+
+}
+.new-arrivals .card .card-body .card-discount-price{
+    color:var(--color-theme);
+    font-weight: var(--font-weight-medium);
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.new-arrivals .card .card-background{
+    position: absolute;
+    bottom: 0;
+    height: 15%;
+    width: 100%;
+    background-color: var(--color-theme-dark);
+    opacity: 0.90;
+    transition: height 0.3s ease-in-out;
+}
+
+.new-arrivals .card:hover .card-background{
+    height: 100%;
+    }
+
+.new-arrivals .card .card-menu{
+    position: absolute;
+    z-index: 1;
+    top: 121%;
+    right: 1rem;
+    list-style: none;
+ 
+    padding: 0.8rem;
+    font-size: 1.25rem;
+    background-color: var(--color-white);
+    border-radius:var(--border-radius-medium);
+    transition: top 0.3s ease-in-out;
+}
+
+   .new-arrivals .card:hover .card-menu{
+    top: 20px;
+     }
+    .new-arrivals .card .card-menu li {
+     margin-top: 0.3rem;
+      margin-bottom: 0.3rem;
+      font-size: 1.0em;
+     }
+
+     .new-arrivals .card .card-menu li a{
+      color: var(--color-gray-0);
+      }
+     .new-arrivals .card .card-menu li a:hover{
+     color:var(--color-theme);
+      }
+
+
+
+      
+        
+   
+      
+      
