@@ -624,8 +624,7 @@ color: var(--color-white);
   grid-template-rows: repeat(1, 400px);
   gap: 8px;
 }
-.new-arrivals .items .item {
-}
+
 
 @media (min-width: 768px) and (max-width: 991px) {
   .new-arrivals .items {
@@ -646,6 +645,7 @@ color: var(--color-white);
   position: relative;
   height: 400px;
   overflow: hidden;
+  border: none;
 }
 
 .new-arrivals .card img {
@@ -928,11 +928,9 @@ color: var(--color-white);
   height: 400px;
   /* width: 403px; */
   overflow: hidden;
+  border: none;
 }
 
-.featured-products .card img {
-  /* height: 400px; */
-}
 
 .featured-products .card .card-body {
   position: absolute;
@@ -1108,8 +1106,6 @@ color: var(--color-white);
 .top-seller .items .item:nth-child(1) {
   grid-row: span 2;
 }
-.top-seller .items .item {
-}
 
 @media (max-width: 767px) {
   .top-seller .items {
@@ -1121,6 +1117,7 @@ color: var(--color-white);
   position: relative;
   height: 400px;
   overflow: hidden;
+  border: none;
 }
 
 .top-seller .card img {
@@ -1227,11 +1224,10 @@ padding-top: 6rem;
 }
 
 
-.subscribe .container {
-  
+
  
 
-}
+
 
 
 .subscribe .search {
